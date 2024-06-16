@@ -1,0 +1,22 @@
+
+{% extends 'user/index.html' %}
+{% load static %}
+{% block content %}
+
+<h1>Book Details</h1>
+<div>
+    <img src="{{ book.image.url }}" alt="">
+    <div>
+        <p>{{ book.title }} ({{ book.quantity }})</p>
+        <p><br/>
+            {{ book.price }}</p>
+
+    </div>
+</div>
+<a href="{% url 'userlist' %}"><button type="button" class="btn btn-outline-warning">Back to Main</button>
+</a>
+
+
+
+
+{% endblock %}

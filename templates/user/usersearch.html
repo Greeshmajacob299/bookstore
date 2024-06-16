@@ -1,0 +1,37 @@
+
+{% extends 'user/index.html' %}
+{% load static %}
+{% block content %}
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Book name</th>
+      <th scope="col">Author</th>
+
+      <th scope="col">Price</th>
+        <th scope="col">Quantity</th>
+
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% if books %}
+  {% for book in books %}
+    <tr>
+     <td>{{ book.title }}</td>
+     <td>{{ book.author }}</td>
+     <td>{{ book.price }}</td>
+        <td>{{ book.quantity }}</td>
+
+     <td>
+        <a href="{% url 'userdetails' book.id %}" class="btn btn-primary">Details</a>
+
+     </td>
+    </tr>
+  {% endfor %}
+  {% endif %}
+  </tbody>
+</table>
+
+{% endblock %}

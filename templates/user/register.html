@@ -1,0 +1,52 @@
+{% extends 'user/index.html' %}
+{% load static %}
+{% block content %}
+
+
+{% for msg in messages %}
+{{ msg }}
+{% endfor %}
+<form action="" method="post">
+  {% csrf_token %}
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="">USERNAME</label>
+      <input type="text" class="form-control" name="username" placeholder="Enter username">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="">FIRST NAME</label>
+      <input type="text" class="form-control" name="first_name" placeholder="Enter first name">
+    </div>
+  </div>
+    <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="">LAST NAME</label>
+      <input type="text" class="form-control" name="last_name" placeholder="Enter lastname">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="">EMAIL</label>
+      <input type="email" class="form-control" name="email" placeholder="Enter valid email">
+    </div>
+  </div>
+    <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="">PASSWORD</label>
+      <input type="password" class="form-control" name="password" placeholder="Enter password">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="">CONFIRM PASSWORD</label>
+      <input type="password" class="form-control" name="password1" placeholder="Confirm password">
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Register</button>
+</form>
+
+
+
+
+
+
+</form>
+
+
+{% endblock %}
